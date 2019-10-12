@@ -20,8 +20,7 @@ export default function CharacterList() {
   }
 
   const handleChange = event => {
-    const {value} = event.target
-    setSearchCharacter(value)
+    setSearchCharacter(event.target.value)
   }
 
   const resetInputField = () => {
