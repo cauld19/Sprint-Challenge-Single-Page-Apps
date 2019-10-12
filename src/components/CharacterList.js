@@ -7,6 +7,7 @@ import CharacterCard from "./CharacterCard";
 import SearchForm from "./SearchForm";
 
 
+
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [characters, setCharacters] = useState([])
@@ -28,6 +29,9 @@ export default function CharacterList() {
     setSearchCharacter("")
   }
 
+  const resetCharacterList = () => {
+    setCharacters(characterList)
+  }
     // TODO: Add API Request here - must run in `useEffect`
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
     useEffect(() => {
@@ -56,7 +60,8 @@ export default function CharacterList() {
         characters={characters} 
         searchCharacter={searchCharacter} 
         handleChange={handleChange} 
-        handleSubmit={handleSubmit}/>
+        handleSubmit={handleSubmit} 
+        resetCharacterList={resetCharacterList} />
       <Row>
         {characters.map(character => {
           return (
@@ -71,7 +76,6 @@ export default function CharacterList() {
           );
         })}
       </Row>
-      
     </Container>
   );
 }
