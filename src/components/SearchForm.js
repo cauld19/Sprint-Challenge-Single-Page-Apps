@@ -10,7 +10,7 @@ const SearchForm = props => {
     <section className="search-form">
       <form onSubmit={props.handleSubmit}>
             {/* <label htmlFor="search">Search</label> */}
-            <input
+            <input className="input-field"
                 id="search"
                 name="search"
                 type="text"
@@ -18,8 +18,8 @@ const SearchForm = props => {
                 onChange={props.handleChange}
                 placeholder="search"
             />
-            <Button type="submit">submit</Button>
-            <Button onClick={() => props.resetCharacterList()}>Reset</Button>
+            <Button className="search-button" type="submit">submit</Button>
+            <Button className="search-button" onClick={() => props.resetCharacterList()}>Reset</Button>
       </form>
       
     </section>

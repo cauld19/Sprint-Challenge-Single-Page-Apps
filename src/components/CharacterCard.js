@@ -13,8 +13,8 @@ const CharacterCard = props => {
           <CardImg src={props.image} width="100%" top /> 
           <CardTitle> <h2>{props.name}</h2> </CardTitle>
           <hr />
-          <CardSubtitle> <h4>Gender: {props.gender}</h4></CardSubtitle>
-          <CardText>Species: {props.species} </CardText>
+          <CardSubtitle> <h5>Species: {props.species}</h5></CardSubtitle>
+          <CardText><h6>Gender: {props.gender}</h6></CardText>
         </CardBody>
     </Card>
     </Col>

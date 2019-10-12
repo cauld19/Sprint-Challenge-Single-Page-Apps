@@ -41,3 +41,11 @@ header h1 {
 .search-form {
   margin-bottom: 10px;
 }
+
+.input-field {
+  margin-right: 2.5px;
+}
+
+.search-button {
+  margin: 2.5px;
+}
