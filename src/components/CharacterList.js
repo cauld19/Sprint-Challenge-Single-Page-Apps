@@ -17,8 +17,13 @@ export default function CharacterList() {
   const handleSubmit = event =>{
     event.preventDefault()
     const filterCharacters = characterList.filter(character => character.name.toLowerCase().includes(searchCharacter.toLowerCase()))
-    setCharacters(filterCharacters)
-    resetInputField();
+    if (filterCharacters.length === 0) {
+      alert("No search results available")
+      resetInputField();
+    } else {
+      setCharacters(filterCharacters)
+      resetInputField();
+    }
   }
 
   const handleChange = event => {
