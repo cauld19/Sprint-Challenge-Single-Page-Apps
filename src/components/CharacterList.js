@@ -10,11 +10,12 @@ import SearchForm from "./SearchForm";
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [characters, setCharacters] = useState([])
+  const [characterList, setCharacterList] = useState([]);
   const [searchCharacter, setSearchCharacter] = useState('')
   
   const handleSubmit = event =>{
     event.preventDefault()
-    const filterCharacters = characters.filter(character => character.name.toLowerCase().includes(searchCharacter.toLowerCase()))
+    const filterCharacters = characterList.filter(character => character.name.toLowerCase().includes(searchCharacter.toLowerCase()))
     setCharacters(filterCharacters)
     resetInputField();
   }
@@ -35,6 +36,8 @@ export default function CharacterList() {
           .get('https://rickandmortyapi.com/api/character/')
           .then(response => {
             setCharacters(response.data.results);
+            setCharacterList(response.data.results);
+
             console.log(response.data.results);
           })
           .catch(error => {
