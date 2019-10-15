@@ -5,6 +5,9 @@ import { Container, Row } from "reactstrap";
 
 import CharacterCard from "./CharacterCard";
 import SearchForm from "./SearchForm";
+// import Character from "./Character";
+
+// import { Route } from "react-router-dom";
 
 
 
@@ -13,6 +16,8 @@ export default function CharacterList() {
   const [characters, setCharacters] = useState([])
   const [characterList, setCharacterList] = useState([]);
   const [searchCharacter, setSearchCharacter] = useState('')
+
+ 
   
   const handleSubmit = event =>{
     event.preventDefault()
@@ -55,7 +60,7 @@ export default function CharacterList() {
       }
       
       getCharacters();
-    }, [setSearchCharacter]);
+    }, [setCharacterList]);
 
 
   return (
@@ -70,17 +75,18 @@ export default function CharacterList() {
       <Row>
         {characters.map(character => {
           return (
-            <CharacterCard 
-              key={character.id} 
-              name={character.name}
-              gender={character.gender}
-              image={character.image}
-              species={character.species}
-              id={character.id}
-            />
+              <CharacterCard 
+                key={character.id} 
+                name={character.name}
+                gender={character.gender}
+                image={character.image}
+                species={character.species}
+                id={character.id}
+              />
           );
         })}
       </Row>
+      
     </Container>
   );
 }
