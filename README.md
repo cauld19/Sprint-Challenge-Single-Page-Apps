@@ -27,6 +27,8 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
+Client-side routing provides fast rendering after the initial load and implementing transitions and animations between views becomes easier.
+
 > Answer:
 
 ## Project Set Up
